@@ -1,0 +1,8 @@
+#map { 
+    height: 550px;
+    width: 550px;
+}
+
+.cuadro{
+    background-color:rgb(180, 231, 231);
+}
