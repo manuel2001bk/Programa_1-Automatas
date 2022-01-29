@@ -1,18 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./index.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Identificador de Placas</title>
-</head>
-<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -33,20 +20,24 @@
                     <div class="card-body">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-lg-8">
+                                <div class="col-10">
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="card-title">Bienvenido</h5>
                                             <p>Ingrese el numero de Placa a verificar</p>
                                             <div class="card">
                                                 <div class="card-body ">
-                                                    <div id="placa" class="input-group mb-3 ">
-                                                        <input class="form-control" type="text"
-                                                            placeholder="Numero de placa" aria-label="Placa" value="">
+                                                    <div class="form-floating ">
+                                                        <input type="text" class="form-control" id="placa"
+                                                            placeholder="Numero de placa" name="Placa" value=""
+                                                            maxlength="9"
+                                                            onkeyup="javascript:this.value=this.value.toUpperCase();">
+                                                        <label for="floatingInput">Numero de placa</label>
                                                     </div>
-                                                    <div class="row ">
-                                                        <button type="button" id="ingresar"
-                                                            class="btn btn-outline-success btn-sm">Ingresar</button>
+                                                    <div class="d-grid gap-3 mt-4">
+                                                        <button class="btn btn-outline-success btn-sm" id="ingresar"
+                                                            type="button">Ingresar
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -54,78 +45,13 @@
                                                 <table class="table">
                                                     <thead class="table-striped">
                                                         <tr>
-                                                            <th scope="col"></th>
-                                                            <th scope="col">Descripcion</th>
+                                                            <th scope="col">Estado</th>
+                                                            <th scope="col">Tipo de vehiculo</th>
+                                                            <th scope="col">Placa</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th scope="row">Estado</th>
-                                                            <td>Chiapas</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">Tipo de vehiculo</th>
-                                                            <td>Camión</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-<script src="./index.js"></script>
+                                                    <tbody id="tablaDatos">
 
-</html>
-<body>
-    <div class="cuadro">
-        <div class="container col-md-8">
-            <div class="row justify-content-center">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bienvenido</h5>
-                                            <p>Ingrese el numero de Placa a verificar</p>
-                                            <div class="card">
-                                                <div class="card-body ">
-                                                    <div id="placa" class="input-group mb-3 ">
-                                                        <input class="form-control" type="text"
-                                                            placeholder="Numero de placa" aria-label="Placa" value="">
-                                                    </div>
-                                                    <div class="row ">
-                                                        <button type="button" id="ingresar"
-                                                            class="btn btn-outline-success btn-sm">Ingresar</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class=" card">
-                                                <table class="table">
-                                                    <thead class="table-striped">
-                                                        <tr>
-                                                            <th scope="col"></th>
-                                                            <th scope="col">Descripcion</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th scope="row">Estado</th>
-                                                            <td>Chiapas</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">Tipo de vehiculo</th>
-                                                            <td>Camión</td>
-                                                        </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
