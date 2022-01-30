@@ -1,5 +1,6 @@
 
 var placa = ''
+
 var estado = ''
 var tipo = ''
 
@@ -30,7 +31,6 @@ function verificar() {
     return false
   }
   else {
-    alert("Procesando")
     return true
   }
 }
