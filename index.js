@@ -10,8 +10,9 @@ const updateValue = (e) => {
 const entrada = document.getElementById('placa').addEventListener('change', updateValue, false);
 
 const getValueInput = () => {
-  verificar()
-  q0()
+  if(verificar()){
+    q0()
+  }
 }
 
 document.getElementById('ingresar').addEventListener('click', getValueInput, false);
@@ -26,33 +27,40 @@ function mostrarDatos() {
 function verificar() {
   if (placa.length < 9) {
     alert("Debes ingresar un dato valido")
+    return false
   }
   else {
     alert("Procesando")
+    return true
   }
+}
+function error() {
+  alert("La placa ingresada esta fuera de los rangos establecidos por el estado \n introdusca una Placa valida")
 }
 
 function q0() {
-  if (placa.charAt(0) === 'C') {
+  var lectura = placa.charAt(0)
+  console.log(placa.charAt(0))
+  if (lectura === 'C') {
     estado = 'Chiapas'
     tipo = 'Camion'
     q1()
   } else {
-    if (placa.charAt(0) === 'D') {
+    if (lectura === 'D') {
       estado = 'Chiapas'
       q2()
     } else {
-      if (placa.charAt(0) === 'V') {
+      if (lectura === 'V') {
         estado = 'Tabasco'
         tipo = 'Camion'
         q3()
       } else {
-        if (placa.charAt(0) === 'W') {
+        if (lectura === 'W') {
           estado = 'Tabasco'
           tipo = 'Carro'
           q4()
         } else {
-          alert("La placa ingresada no pertenece a los estados Validos")
+          error()
         }
       }
     }
@@ -60,103 +68,280 @@ function q0() {
 }
 
 function q1() {
+  var lectura = placa.charAt(1)
+  var valido = false
+  console.log(lectura)
   var letras = ['V', 'W', 'X', 'Y', 'Z']
-  console.log(placa.charAt(1))
-  q5()
+  for (i in letras) {
+    if (lectura == letras[i]) {
+      valido = true
+    }
+  }
+  if (valido) {
+    q5()
+  } else {
+    error()
+  }
+
 }
 
 function q2() {
+  var lectura = placa.charAt(1)
+  var valido = false
+  console.log(lectura)
   var letras = ['A', 'B', 'C']
   var letras2 = ['L', 'M', 'N', 'P', 'R', 'S']
-  console.log(placa.charAt(1))
-  q5()
-  q17()
+  for (i in letras) {
+    if (lectura == letras[i]) {
+      valido = true
+      tipo = 'Camion'
+    }
+  }
+  if (valido) {
+    q5()
+  }
+  else {
+    for (i in letras2) {
+      if (lectura == letras2[i]) {
+        valido = true
+        tipo = 'Carro'
+      }
+    }
+    if (valido) {
+      q17()
+    }
+    else {
+      error()
+    }
+  }
 }
 
 function q3() {
+  var lectura = String(placa.charAt(1))
+  var valido = false
+  console.log(lectura)
   var letras = ['L', 'M', 'N', 'P', 'R', 'S', 'T']
-  console.log(placa.charAt(1))
-  q5()
+  for (i in letras) {
+    if (lectura === letras[i]) {
+      valido = true
+    }
+  }
+  if (valido) {
+    q5()
+  } else {
+    error()
+  }
 }
 
 function q4() {
+  var lectura = placa.charAt(1)
+  var valido = false
+  console.log(lectura)
   var letras = ['L', 'M', 'N', 'P', 'R', 'S', 'T', 'U', 'V', 'W']
-  console.log(placa.charAt(1))
-  q17()
+  for (i in letras) {
+    if (lectura === letras[i]) {
+      valido = true
+    }
+  }
+  if (valido) {
+    q17()
+  } else {
+    error()
+  }
 }
 
 function q5() {
+  var lectura = placa.charAt(2)
+  console.log(lectura)
   var signo = '-'
-  console.log(placa.charAt(2))
-  q6()
+  if (lectura == signo) {
+    q6()
+  } else {
+    error()
+  }
 }
 
 function q6() {
-  var numeros = '0'
+  var lectura = placa.charAt(3)
+  var valido = false
+  console.log(lectura)
+  var numero = '0'
   var numeros2 = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-  console.log(placa.charAt(3))
-  q7()
-  q10()
+  if (lectura == numero) {
+    q7()
+  } else {
+    for (i in numeros2) {
+      if (lectura == numeros2[i]) {
+        valido = true
+      }
+    }
+    if (valido) {
+      q11()
+    }
+    else {
+      error()
+    }
+  }
 }
 
 function q7() {
-  var numeros = '0'
+  var lectura = placa.charAt(4)
+  var valido = false
+  console.log(lectura)
+  var numero = '0'
   var numeros2 = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-  console.log(placa.charAt(4))
-  q8()
-  q12()
+  if (lectura === numero) {
+    q8()
+  } else {
+    for (i in numeros2) {
+      console.log("Ingreso", numeros2[i])
+      if (lectura == numeros2[i]) {
+        valido = true
+      }
+    }
+    if (valido) {
+      q12()
+    }
+    else {
+      error()
+    }
+  }
 }
 
 function q8() {
-  var numeros = '0'
+  var lectura = placa.charAt(5)
+  var valido = false
+  console.log(lectura)
+  var numero = '0'
   var numeros2 = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-  console.log(placa.charAt(5))
-  q9()
-  q13()
+  if (lectura == numero) {
+    q9()
+  } else {
+    for (i in numeros2) {
+      if (lectura == numeros2[i]) {
+        valido = true
+      }
+    }
+    if (valido) {
+      q13()
+    }
+    else {
+      error()
+    }
+  }
 }
 
 function q9() {
-  var numeros = '1'
+  var lectura = placa.charAt(6)
+  var valido = false
+  console.log(lectura)
+  var numero = '1'
   var numeros2 = ['2', '3', '4', '5', '6', '7', '8', '9']
-  console.log(placa.charAt(6))
-  q10()
-  q14()
+  if (lectura == numero) {
+    q10()
+  } else {
+    for (i in numeros2) {
+      if (lectura == numeros2[i]) {
+        valido = true
+      }
+    }
+    if (valido) {
+      q14()
+    }
+    else {
+      error()
+    }
+  }
 }
 
 function q10() {
+  var lectura = placa.charAt(7)
+  console.log(lectura)
   var signo = '-'
-  console.log(placa.charAt(7))
-  q15()
+  if (lectura == signo) {
+    q15()
+  } else {
+    error()
+  }
 }
 
 function q11() {
+  var lectura = placa.charAt(4)
+  var valido = false
+  console.log(lectura)
   var numeros = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-  console.log(placa.charAt(4))
-  q12()
+  for (i in numeros) {
+    if (lectura == numeros[i]) {
+      valido = true
+    }
+  }
+  if (valido) {
+    q12()
+  } else {
+    error()
+  }
 }
 
 function q12() {
+  var lectura = placa.charAt(5)
+  var valido = false
+  console.log(lectura)
   var numeros = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-  console.log(placa.charAt(5))
-  q13()
+  for (i in numeros) {
+    if (lectura == numeros[i]) {
+      valido = true
+    }
+  }
+  if (valido) {
+    q13()
+  } else {
+    error()
+  }
 }
 
 function q13() {
+  var lectura = placa.charAt(6)
+  var valido = false
+  console.log(lectura)
   var numeros = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-  console.log(placa.charAt(6))
-  q14()
+  for (i in numeros) {
+    if (lectura == numeros[i]) {
+      valido = true
+    }
+  }
+  if (valido) {
+    q14()
+  } else {
+    error()
+  }
 }
 
 function q14() {
+  var lectura = placa.charAt(7)
+  console.log(lectura)
   var signo = '-'
-  console.log(placa.charAt(7))
-  q15()
+  if (lectura == signo) {
+    q15()
+  } else {
+    error()
+  }
 }
 
 function q15() {
+  var lectura = placa.charAt(8)
+  var valido = false
+  console.log(lectura)
   var abecedario = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-  console.log(placa.charAt(8))
-  q16()
+  for (i in abecedario) {
+    if (lectura === abecedario[i]) {
+      valido = true
+    }
+  }
+  if (valido) {
+    q16()
+  } else {
+    error()
+  }
 }
 
 function q16() {
@@ -171,63 +356,156 @@ function q17() {
 }
 
 function q18() {
+  var lectura = placa.charAt(3)
+  console.log(lectura)
   var signo = '-'
-  console.log(placa.charAt(3))
-  q19()
+  if (lectura == signo) {
+    q19()
+  } else {
+    error()
+  }
 }
 
 function q19() {
-  var numeros = '0'
+  var lectura = placa.charAt(4)
+  var valido = false
+  console.log(lectura)
+  var numero = '0'
   var numeros2 = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-  console.log(placa.charAt(4))
-  q20()
-  q23()
+  if (lectura == numero) {
+    q20()
+  } else {
+    for (i in numeros2) {
+      if (lectura == numeros2[i]) {
+        valido = true
+      }
+    }
+    if (valido) {
+      q23()
+    }
+    else {
+      error()
+    }
+  }
 }
 
 function q20() {
-  var numeros = '0'
+  var lectura = placa.charAt(5)
+  var valido = false
+  console.log(lectura)
+  var numero = '0'
   var numeros2 = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-  console.log(placa.charAt(5))
-  q21()
-  q24()
+  if (lectura == numero) {
+    q21()
+  } else {
+    for (i in numeros2) {
+      if (lectura == numeros2[i]) {
+        valido = true
+      }
+    }
+    if (valido) {
+      q24()
+    }
+    else {
+      error()
+    }
+  }
 }
 
 function q21() {
-  var numeros = '1'
+  var lectura = placa.charAt(6)
+  var valido = false
+  console.log(lectura)
+  var numero = '1'
   var numeros2 = ['2', '3', '4', '5', '6', '7', '8', '9']
-  console.log(placa.charAt(6))
-  q22()
-  q25()
+  if (lectura == numero) {
+    q22()
+  } else {
+    for (i in numeros2) {
+      if (lectura == numeros2[i]) {
+        valido = true
+      }
+    }
+    if (valido) {
+      q25()
+    }
+    else {
+      error()
+    }
+  }
 }
 
 function q22() {
+  var lectura = placa.charAt(7)
+  console.log(lectura)
   var signo = '-'
-  console.log(placa.charAt(7))
-  q26()
+  if (lectura == signo) {
+    q26()
+  } else {
+    error()
+  }
 }
 
 function q23() {
+  var lectura = placa.charAt(5)
+  var valido = false
+  console.log(lectura)
   var numeros = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-  console.log(placa.charAt(5))
-  q24()
+  for (i in numeros) {
+    if (lectura == numeros[i]) {
+      valido = true
+    }
+  }
+  if (valido) {
+    q24()
+  } else {
+    error()
+  }
 }
 
 function q24() {
+  var lectura = placa.charAt(6)
+  var valido = false
+  console.log(lectura)
   var numeros = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-  console.log(placa.charAt(6))
-  q25()
+  for (i in numeros) {
+    if (lectura == numeros[i]) {
+      valido = true
+    }
+  }
+  if (valido) {
+    q25()
+  } else {
+    error()
+  }
 }
 
 function q25() {
+  var lectura = placa.charAt(7)
+  console.log(lectura)
   var signo = '-'
-  console.log(placa.charAt(7))
-  q26()
+  if (lectura == signo) {
+    q26()
+  } else {
+    error()
+  }
 }
 
 function q26() {
+  var lectura = placa.charAt(8)
+  var valido = false
+  console.log(lectura)
   var abecedario = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-  console.log(placa.charAt(8))
-  q27()
+  for (i in abecedario) {
+    if (lectura === abecedario[i]) {
+      valido = true
+    }
+  }
+  if (valido) {
+    q27()
+  } else {
+    error()
+  }
 }
 
 function q27() {
