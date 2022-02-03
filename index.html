@@ -13,51 +13,49 @@
 </head>
 
 <body>
-    <div class="cuadro">
-        <div class="container col-md-8">
-            <div class="row justify-content-center">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bienvenido</h5>
-                                            <p>Ingrese el numero de Placa a verificar</p>
-                                            <div class="card">
-                                                <div class="card-body ">
-                                                    <div class="form-floating ">
-                                                        <input type="text" class="form-control" id="placa"
-                                                            placeholder="Numero de placa" name="Placa" value=""
-                                                            maxlength="9"
-                                                            onkeyup="javascript:this.value=this.value.toUpperCase();">
-                                                        <label for="floatingInput">Numero de placa</label>
-                                                    </div>
-                                                    <div class="d-grid gap-3 mt-4">
-                                                        <button class="btn btn-outline-success btn-sm" id="ingresar"
-                                                            type="button">Ingresar
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class=" card">
-                                                <table class="table">
-                                                    <thead class="table-striped">
-                                                        <tr>
-                                                            <th scope="col">Estado</th>
-                                                            <th scope="col">Tipo de vehiculo</th>
-                                                            <th scope="col">Placa</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody id="tablaDatos">
+    <div>
+        <div class="center ">
+            <div class="container">
+                <div class="card overflow-hidden my-5 pt-sm-4">
+                    <div class="bg-login-overlay"></div>
+                    <div class="row justify-content-around">
+                        <div class="col-8">
+                            <div class="card overflow-hidden container">
+                                <div class="bg-login text-center" />
 
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
+                            </div>
+                            <div>
+                                <h4 class="text-black ">Bienvenido!</h4>
+                                <p class="text-black mb-0">Ingrese el numero de Placa a verificar</p>
+                            </div>
+                            <div class="card-body pt-5">
+                                <div class="p-2">
+                                    <div class="form-floating ">
+                                        <input type="text" class="form-control" id="placa" placeholder="Numero de placa"
+                                            name="Placa" value="" maxlength="9"
+                                            onkeyup="javascript:this.value=this.value.toUpperCase();">
+                                        <label for="floatingInput">Numero de placa</label>
+                                    </div>
+                                    <div class="d-grid gap-3 mt-4">
+                                        <button class="btn btn-outline-success btn-sm" id="ingresar"
+                                            type="button">Ingresar
+                                        </button>
                                     </div>
                                 </div>
+                            </div>
+                            <div class=" card">
+                                <table class="table">
+                                    <thead class="table-striped">
+                                        <tr>
+                                            <th scope="col">Estado</th>
+                                            <th scope="col">Tipo de vehiculo</th>
+                                            <th scope="col">Placa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tablaDatos">
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
