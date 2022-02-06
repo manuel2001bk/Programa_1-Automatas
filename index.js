@@ -11,7 +11,7 @@ const updateValue = (e) => {
 const entrada = document.getElementById('placa').addEventListener('change', updateValue, false);
 
 const getValueInput = () => {
-  if(verificar()){
+  if (verificar()) {
     q0()
   }
 }
@@ -345,7 +345,7 @@ function q15() {
 }
 
 function q16() {
-  //Estado final
+  //Estado Aceptacion
   mostrarDatos()
 }
 
@@ -509,6 +509,6 @@ function q26() {
 }
 
 function q27() {
-  //Estado final
+  //Estado Aceptacion
   mostrarDatos()
 }

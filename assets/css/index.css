@@ -1,6 +1,6 @@
 
 .bg-login{
-    background-image: url(./assets/placas.png);
+    background-image: url(../images/placa_chiapas.jpg);
     padding: 60px 0px;
     background-size: cover;
     background-position: center center;
@@ -9,7 +9,7 @@
 }
 
 .bg-login-overlay{
-    background-image: url(./assets/placas_2.jpg);
+    background-image: url(../images/placas_2.jpg);
     position: absolute;
     top: 0;
     right: 0;
